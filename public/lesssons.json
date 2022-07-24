@@ -1,0 +1,37 @@
+[
+    {
+        "title": "HTML Introduction",
+        "subTitle": "What is HTML?",
+        "description": "HTML stands for Hyper Text Markup Language.HTML is the standard markup language for creating Web pages. HTML describes the structure of a Web page. HTML consists of a series of elements.HTML elements tell the browser how to display the content etc.",
+        "exampleImg": "https://www.codegrepper.com/codeimages/html-web-page-examples-with-source-code.png",
+        "note": "Some HTML elements have no content (like the <br> element). These elements are called empty elements. Empty elements do not have an end tag!"
+    },
+    {
+        "title": "HTML Editors",
+        "subTitle": "Learn HTML Using Notepad or TextEdit",
+        "description": "Web pages can be created and modified by using professional HTML editors. However, for learning HTML we recommend a simple text editor like Notepad (PC) or TextEdit (Mac).We believe in that using a simple text editor is a good way to learn HTML.Follow the steps below to create your first web page with Notepad or TextEdit.",
+        "exampleImg": "https://www.w3schools.com/html/img_chrome.png",
+        "note": "You can use either .htm or .html as file extension. There is no difference, it is up to you."
+    },
+    {
+        "title": "HTML Introduction",
+        "subTitle": "What is HTML?",
+        "description": "HTML stands for Hyper Text Markup Language.HTML is the standard markup language for creating Web pages. HTML describes the structure of a Web page. HTML consists of a series of elements.HTML elements tell the browser how to display the content etc.",
+        "exampleImg": "https://www.codegrepper.com/codeimages/html-web-page-examples-with-source-code.png",
+        "note": "Some HTML elements have no content (like the <br> element). These elements are called empty elements. Empty elements do not have an end tag!"
+    },
+    {
+        "title": "HTML Editors",
+        "subTitle": "Learn HTML Using Notepad or TextEdit",
+        "description": "Web pages can be created and modified by using professional HTML editors. However, for learning HTML we recommend a simple text editor like Notepad (PC) or TextEdit (Mac).We believe in that using a simple text editor is a good way to learn HTML.Follow the steps below to create your first web page with Notepad or TextEdit.",
+        "exampleImg": "https://www.w3schools.com/html/img_chrome.png",
+        "note": "You can use either .htm or .html as file extension. There is no difference, it is up to you."
+    },
+    {
+        "title": "HTML Introduction",
+        "subTitle": "What is HTML?",
+        "description": "HTML stands for Hyper Text Markup Language.HTML is the standard markup language for creating Web pages. HTML describes the structure of a Web page. HTML consists of a series of elements.HTML elements tell the browser how to display the content etc.",
+        "exampleImg": "https://www.codegrepper.com/codeimages/html-web-page-examples-with-source-code.png",
+        "note": "Some HTML elements have no content (like the <br> element). These elements are called empty elements. Empty elements do not have an end tag!"
+    }
+]
