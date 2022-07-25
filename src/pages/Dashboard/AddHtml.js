@@ -21,7 +21,7 @@ const AddHtml = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
-                    toast.success('Your Review Added Successfully!')
+                    toast.success('Content Added Successfully!')
                     event.target.title.value = ''
                     event.target.subTitle.value = ''
                     event.target.description.value = ''
@@ -32,7 +32,7 @@ const AddHtml = () => {
     }
     return (
         <div className='flex justify-center items-center my-6'>
-            <div class="card pr-8 lg:w-3/5 bg-base-100 shadow-xl text-center">
+            <div class="card pr-8 lg:w-3/5 shadow-xl text-center bg-slate-300">
                 <h1 className='text-3xl text-slate-700 my-4 font-bold'>Add a New HTML Lesson</h1>
                 <form onSubmit={handleAddHtmlContent} className='text-center'>
                     <input type="text" placeholder="Add Your Content Title" class="input input-bordered input-lg w-full mb-4 mx-4" name='title' />

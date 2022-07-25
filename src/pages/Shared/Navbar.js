@@ -2,8 +2,17 @@ import React from 'react';
 import logo from '../../images/logo.png'
 import { FaHome, FaLaptopCode, FaSearch } from 'react-icons/fa';
 import { Link } from "react-router-dom";
+import { signOut } from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Navbar = () => {
+    const [user] = useAuthState(auth)
+    const handleSignout = () => {
+        signOut(auth)
+        localStorage.removeItem('accessToken')
+    }
+
     const navLinks = [
         <>
             <li className='hover:bg-green-600 hover:rounded-md'><Link to='/'><FaHome className='text-2xl'></FaHome></Link></li>
@@ -41,9 +50,12 @@ const Navbar = () => {
                     <FaSearch className='text-2xl text-white mr-4 hidden lg:flex'></FaSearch>
                     <FaLaptopCode className='text-2xl text-white mr-4 hidden lg:flex'></FaLaptopCode>
                     <input type="checkbox" id='toggle' class="toggle mr-4" />
-                    <button className='btn bg-green-600'>
-                        <Link to='/login'>Login</Link>
-                    </button>
+                    {user ?
+                        <button onClick={handleSignout} className="btn bg-green-600 border-0">Sign Out</button>
+                        :
+                        <button className='btn bg-green-600 border-0'>
+                            <Link to='/login'>Login</Link>
+                        </button>}
                 </div>
             </div>
             <div className="navbar-end bg-slate-900 w-full">

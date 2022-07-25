@@ -8,6 +8,10 @@ import Navbar from './pages/Shared/Navbar';
 import Content from './pages/Html/HtmlContent'
 import Dashboard from "./pages/Dashboard/Dashboard";
 import AddHtml from "./pages/Dashboard/AddHtml";
+import UpdateHtml from "./pages/Dashboard/UpdateHtml";
+import Login from "./pages/Login/Login";
+import SignUp from "./pages/Login/SignUp";
+import RequireAuth from './pages/Login/RequireAuth'
 
 function App() {
   return (
@@ -16,11 +20,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path="/signUp" element={<SignUp></SignUp>}></Route>
         <Route path="/html" element={<Html></Html>}>
           <Route path="lesson/:id" element={<Content></Content>}></Route>
         </Route>
-        <Route path='dashboard' element={<Dashboard></Dashboard>}>
+        <Route path='dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route path="addHtml" element={<AddHtml></AddHtml>}></Route>
+          <Route path="updateHtml" element={<UpdateHtml></UpdateHtml>}></Route>
         </Route>
 
       </Routes>

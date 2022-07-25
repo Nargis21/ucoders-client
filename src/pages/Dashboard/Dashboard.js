@@ -20,8 +20,10 @@ const Dashboard = () => {
 
                     {/* { <!-- Sidebar content here -->} */}
 
-                    <li><Link to='/dashboard/addHtml' className='hover:bg-green-600 hover:text-white text-slate-200 font-bold'
+                    <li><Link to='/dashboard/addHtml' className='hover:bg-green-600 hover:text-white text-slate-200 bg-slate-600 font-bold mb-2'
                     >Add HTML Content</Link></li>
+                    <li><Link to='/dashboard/updateHtml' className='hover:bg-green-600 hover:text-white text-slate-200 bg-slate-600 font-bold mb-2 '
+                    >Update HTML Content</Link></li>
 
                 </ul>
 
