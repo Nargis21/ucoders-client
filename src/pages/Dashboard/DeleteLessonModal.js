@@ -1,10 +1,10 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const DeleteHtmlModal = ({ deleteConfirm, setDeleteConfirm, refetch }) => {
+const DeleteLessonModal = ({ deleteConfirm, setDeleteConfirm, refetch }) => {
     const { _id } = deleteConfirm
-    const handleHtmlDelete = () => {
-        fetch(`http://localhost:5000/htmlLessons/${_id}`, {
+    const handleLessonDelete = () => {
+        fetch(`http://localhost:5000/bookmark/${_id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -25,13 +25,13 @@ const DeleteHtmlModal = ({ deleteConfirm, setDeleteConfirm, refetch }) => {
     }
     return (
         <div>
-            <input type="checkbox" id="delete-html-modal" class="modal-toggle" />
+            <input type="checkbox" id="delete-lesson-modal" class="modal-toggle" />
             <div class="modal modal-bottom sm:modal-middle">
                 <div class="modal-box">
-                    <h3 class="font-bold text-lg">Are you sure want to delete this Content?</h3>
+                    <h3 class="font-bold text-lg">Are you sure want to delete this lesson from Your Bookmark?</h3>
                     <div class="modal-action">
-                        <button className='btn btn-error  px-6 btn-sm' onClick={handleHtmlDelete}>Delete</button>
-                        <label for="delete-html-modal" class="btn px-6 btn-sm">Cancel</label>
+                        <button className='btn btn-error  px-6 btn-sm' onClick={handleLessonDelete}>Delete</button>
+                        <label for="delete-lesson-modal" class="btn px-6 btn-sm">Cancel</label>
                     </div>
                 </div>
             </div>
@@ -39,4 +39,4 @@ const DeleteHtmlModal = ({ deleteConfirm, setDeleteConfirm, refetch }) => {
     );
 };
 
-export default DeleteHtmlModal;
+export default DeleteLessonModal;

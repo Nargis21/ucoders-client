@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../images/logo.png'
-import { FaHome, FaLaptopCode, FaSearch } from 'react-icons/fa';
+import { FaAlignJustify, FaAppStore, FaDashcube, FaHome, FaLaptopCode, FaSearch, FaSquareFull, FaSquarespace } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 import { signOut } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -19,8 +19,9 @@ const Navbar = () => {
             <li className='hover:bg-green-600 hover:rounded-md'><Link to='/html'>HTML</Link></li>
             <li className='hover:bg-green-600 hover:rounded-md'><Link to='/css'>CSS</Link></li>
             <li className='hover:bg-green-600 hover:rounded-md'><Link to='/javascript'>JAVASCRIPT</Link></li>
-            <li className='hover:bg-green-600 hover:rounded-md'><Link to='/dom'>DOM</Link></li>
-            <li className='hover:bg-green-600 hover:rounded-md'><Link to='/dashboard'>Dashboard</Link></li>
+            <li className='hover:bg-green-600 hover:rounded-md'><Link to='/react'>REACT</Link></li>
+            <li className='hover:bg-green-600 hover:rounded-md'><Link to='/node'>NODE.JS</Link></li>
+            <li className='hover:bg-green-600 hover:rounded-md'><Link to='/dashboard'><FaAlignJustify></FaAlignJustify></Link></li>
         </>
     ]
 

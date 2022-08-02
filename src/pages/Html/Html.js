@@ -26,6 +26,7 @@ const Html = () => {
 
                     {/* { <!-- Sidebar content here -->} */}
 
+
                     {htmlLessons.map(htmlLesson =>
                         <li key={htmlLesson._id}><Link className='hover:bg-green-600 hover:text-white text-slate-200 font-bold'
                             to={`/html/lesson/${htmlLesson._id}`}>{htmlLesson.title}</Link></li>

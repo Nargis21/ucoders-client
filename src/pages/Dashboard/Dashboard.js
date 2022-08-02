@@ -1,7 +1,12 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import useAdmin from '../../hooks/useAdmin';
 
 const Dashboard = () => {
+    const [user] = useAuthState(auth)
+    const [admin] = useAdmin(user)
     return (
         <div className="drawer drawer-mobile">
             <input id="html-sidebar" type="checkbox" className="drawer-toggle" />
@@ -20,10 +25,20 @@ const Dashboard = () => {
 
                     {/* { <!-- Sidebar content here -->} */}
 
-                    <li><Link to='/dashboard/addHtml' className='hover:bg-green-600 hover:text-white text-slate-200 bg-slate-600 font-bold mb-2'
-                    >Add HTML Content</Link></li>
-                    <li><Link to='/dashboard/updateHtml' className='hover:bg-green-600 hover:text-white text-slate-200 bg-slate-600 font-bold mb-2 '
-                    >Update HTML Content</Link></li>
+                    <li><Link to='/dashboard' className='hover:bg-green-600 hover:text-white text-slate-200 bg-slate-600 font-bold mb-2'
+                    >My Profile</Link></li>
+                    <li><Link to='/dashboard/myLearning' className='hover:bg-green-600 hover:text-white text-slate-200 bg-slate-600 font-bold mb-2'
+                    >My Learning</Link></li>
+                    {
+                        admin && <>
+                            <li><Link to='/dashboard/addHtml' className='hover:bg-green-600 hover:text-white text-slate-200 bg-slate-600 font-bold mb-2'
+                            >Add HTML Content</Link></li>
+                            <li><Link to='/dashboard/updateHtml' className='hover:bg-green-600 hover:text-white text-slate-200 bg-slate-600 font-bold mb-2 '
+                            >Update HTML Content</Link></li>
+                            <li><Link to='/dashboard/makeAdmin' className='hover:bg-green-600 hover:text-white text-slate-200 bg-slate-600 font-bold mb-2 '
+                            >Make Admin</Link></li>
+                        </>
+                    }
 
                 </ul>
 

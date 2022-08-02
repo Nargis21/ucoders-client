@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { FaAngleDoubleRight, FaHashtag } from 'react-icons/fa';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { FaAngleDoubleRight } from 'react-icons/fa';
 import { Link, useParams } from 'react-router-dom';
+import auth from '../../firebase.init';
+import { toast } from 'react-toastify';
 
 const Content = () => {
+
+    const [user] = useAuthState(auth)
     const { id } = useParams()
     const [htmlLesson, setHtmlLesson] = useState({})
     useEffect(() => {
@@ -11,12 +16,39 @@ const Content = () => {
             .then(data => setHtmlLesson(data))
     }, [id])
 
+    const handleBookmark = () => {
+        const bookmarkContent = {
+            email: user.email,
+            type: 'node',
+            lesson: htmlLesson.title
+        }
+        fetch('http://localhost:5000/bookmark', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(bookmarkContent)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    toast.success('Bookmarked!')
+                }
+                else {
+                    toast.error('Already Bookmarked')
+                }
+            })
+    }
+
 
     return (
         <div className='lg:px-4 px-2 lg:pt-4 text-slate-200'>
-            <div className='text-4xl font-semibold flex justity-center items-center'>
-                <FaHashtag></FaHashtag>
-                <h1>{htmlLesson.title}</h1>
+            <div className='text-4xl font-semibold flex justify-between'>
+                <h1># {htmlLesson.title}</h1>
+                <div>
+                    <button onClick={handleBookmark} className='btn bg-green-600 border-0'>
+                        Add To Bookmark</button>
+                </div>
             </div>
             <div className='py-4'>
                 <hr />
