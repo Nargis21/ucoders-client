@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { FaAngleDoubleRight } from 'react-icons/fa';
+import { FaAngleDoubleRight, FaBookmark } from 'react-icons/fa';
 import { Link, useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
@@ -43,18 +43,18 @@ const Content = () => {
 
     return (
         <div className='lg:px-4 px-2 lg:pt-4 text-slate-200'>
-            <div className='text-4xl font-semibold flex justify-between'>
+            <div className='lg:text-4xl  text-3xl font-semibold flex lg:flex-row flex-col gap-2 justify-between'>
                 <h1># {htmlLesson.title}</h1>
                 <div>
                     <button onClick={handleBookmark} className='btn bg-green-600 border-0'>
-                        Add To Bookmark</button>
+                        <span className='pr-2'> Add To Bookmark </span><FaBookmark></FaBookmark> </button>
                 </div>
             </div>
             <div className='py-4'>
                 <hr />
             </div>
             <div>
-                <h1 className='text-3xl font-semibold py-4'>{htmlLesson.subTitle}</h1>
+                <h1 className='lg:text-3xl text-2xl font-semibold py-4'>{htmlLesson.subTitle}</h1>
                 <div className=''>
                     <h1 className='text-xl'>{htmlLesson.description}</h1>
                 </div>

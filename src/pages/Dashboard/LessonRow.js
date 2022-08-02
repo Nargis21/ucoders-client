@@ -10,7 +10,7 @@ const LessonRow = ({ content, index, refetch, setDeleteConfirm }) => {
 
     return (
         <div>
-            <div class="card break-all bg-base-100 shadow-xl">
+            <div class="card break-all bg-slate-200 shadow-xl">
                 <div class="card-body">
                     <div className='flex flex-col justify-center items-center'>
                         {content.type === 'html' && <img width={'100px'} src={html} alt="" />}

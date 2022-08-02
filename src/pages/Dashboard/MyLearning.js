@@ -19,11 +19,11 @@ const MyLearning = () => {
         return <Loading></Loading>
     }
     return (
-        <div className='p-6 pb-20 bg-slate-200'>
-            <div className='py-12 text-center'>
+        <div className='p-6 pb-20 bg-slate-700'>
+            <div className='py-12 text-center text-slate-200'>
                 <div class="indicator">
                     <span class="indicator-item badge badge-accent font-bold">{lessons?.length}</span>
-                    <h1 className='text-4xl font-bold  text-zinc-700'>Your Lessons</h1>
+                    <h1 className='text-4xl font-bold '>Your Lessons</h1>
                 </div>
             </div>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3'>

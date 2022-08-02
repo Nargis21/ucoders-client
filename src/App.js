@@ -17,6 +17,7 @@ import MyProfile from "./pages/Dashboard/MyProfile";
 import RequireAdmin from "./pages/Dashboard/RequireAdmin";
 import MyLearning from "./pages/Dashboard/MyLearning";
 import HtmlIndex from "./pages/Html/HtmlIndex";
+import DashboardIndex from "./pages/Dashboard/DashboardIndex";
 
 function App() {
   return (
@@ -32,7 +33,8 @@ function App() {
           <Route path="lesson/:id" element={<Content></Content>}></Route>
         </Route>
         <Route path='dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
-          <Route index element={<MyProfile></MyProfile>}></Route>
+          <Route index element={<DashboardIndex></DashboardIndex>}></Route>
+          <Route path="myProfile" element={<MyProfile></MyProfile>}></Route>
           <Route path="myLearning" element={<MyLearning></MyLearning>}></Route>
           <Route path="addHtml" element={<RequireAdmin><AddHtml></AddHtml></RequireAdmin>}></Route>
           <Route path="updateHtml" element={<RequireAdmin><UpdateHtml></UpdateHtml></RequireAdmin>}></Route>

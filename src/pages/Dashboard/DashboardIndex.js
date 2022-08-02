@@ -1,12 +1,12 @@
 import React from 'react';
 import Lottie from "react-lottie";
-import html from '../../assets/learn.json'
+import dashboard from '../../assets/chart.json'
 
-const HtmlIndex = () => {
+const DashboardIndex = () => {
     const defaultOptions = {
         loop: true,
         autoplay: true,
-        animationData: html,
+        animationData: dashboard,
         rendererSettings: {
             preserveAspectRatio: "xMidYMid slice",
         },
@@ -23,4 +23,4 @@ const HtmlIndex = () => {
     );
 };
 
-export default HtmlIndex;
+export default DashboardIndex;
