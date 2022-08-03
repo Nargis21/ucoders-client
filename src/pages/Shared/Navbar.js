@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../images/logo.png'
-import { FaAlignJustify, FaAppStore, FaDashcube, FaHome, FaLaptopCode, FaSearch, FaSquareFull, FaSquarespace } from 'react-icons/fa';
+import { FaAlignJustify, FaHome, FaLaptopCode, FaSearch, FaSignOutAlt, FaSignInAlt } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 import { signOut } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -21,6 +21,7 @@ const Navbar = () => {
             <li className='hover:bg-green-600 hover:rounded-md'><Link to='/javascript'>JAVASCRIPT</Link></li>
             <li className='hover:bg-green-600 hover:rounded-md'><Link to='/react'>REACT</Link></li>
             <li className='hover:bg-green-600 hover:rounded-md'><Link to='/node'>NODE.JS</Link></li>
+            <li className='hover:bg-green-600 hover:rounded-md'><Link to='/dom'>DOM</Link></li>
             <li className='hover:bg-green-600 hover:rounded-md'><Link to='/dashboard'><FaAlignJustify></FaAlignJustify></Link></li>
         </>
     ]
@@ -50,12 +51,16 @@ const Navbar = () => {
                 <div class="navbar-end">
                     <FaSearch className='text-2xl text-white mr-4 hidden lg:flex'></FaSearch>
                     <FaLaptopCode className='text-2xl text-white mr-4 hidden lg:flex'></FaLaptopCode>
-                    <input type="checkbox" id='toggle' class="toggle mr-4" />
+                    <input type="checkbox" id='toggle' class="toggle mr-4 hidden lg:flex" />
                     {user ?
-                        <button onClick={handleSignout} className="btn bg-green-600 border-0">Sign Out</button>
+                        <button onClick={handleSignout} className="btn bg-green-600 border-0"><span className='mr-2'>Sign Out</span> <FaSignOutAlt></FaSignOutAlt></button>
                         :
                         <button className='btn bg-green-600 border-0'>
-                            <Link to='/login'>Login</Link>
+                            <Link to='/login'>
+                                <div className='flex'>
+                                    <span className='mr-2'>Login</span><FaSignInAlt></FaSignInAlt>
+                                </div>
+                            </Link>
                         </button>}
                 </div>
             </div>

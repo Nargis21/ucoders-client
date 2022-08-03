@@ -12,13 +12,14 @@ const DashboardIndex = () => {
         },
     };
     return (
-        <div>
-            <Lottie
-                className="mx-3 mb-3"
-                options={defaultOptions}
-            // height={700}
-            // width={700}
-            />
+        <div className='flex justify-center items-center'>
+            <div className='lg:w-8/12 lg:h-8/12'>
+                <Lottie
+                    options={defaultOptions}
+                // height={700}
+                // width={700}
+                />
+            </div>
         </div>
     );
 };

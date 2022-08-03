@@ -1,6 +1,6 @@
 import React from 'react';
 import Lottie from "react-lottie";
-import html from '../../assets/learn.json'
+import html from '../../assets/dev .json'
 
 const HtmlIndex = () => {
     const defaultOptions = {
@@ -12,13 +12,15 @@ const HtmlIndex = () => {
         },
     };
     return (
-        <div>
-            <Lottie
-                className="mx-3 mb-3"
-                options={defaultOptions}
-            // height={700}
-            // width={700}
-            />
+        <div className='flex justify-center items-center'>
+            <div className='lg:w-6/12 lg:h-6/12 '>
+                <Lottie
+                    className="mx-3 mb-3"
+                    options={defaultOptions}
+                // height={600}
+                // width={700}
+                />
+            </div>
         </div>
     );
 };
