@@ -12,7 +12,7 @@ const DashboardIndex = () => {
         },
     };
     return (
-        <div className='flex justify-center items-center'>
+        <div className='flex justify-center items-center py-12'>
             <div className='lg:w-8/12 lg:h-8/12'>
                 <Lottie
                     options={defaultOptions}

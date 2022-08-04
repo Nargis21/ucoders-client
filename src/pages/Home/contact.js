@@ -28,7 +28,7 @@ const Editor = () => {
         },
     };
     return (
-        <div className='flex lg:flex-row flex-col bg-slate-800 justify-evenly items-center lg:py-16 py-8 w-full'>
+        <div className='flex lg:flex-row flex-col-reverse bg-slate-800 justify-evenly items-center px-2 lg:py-16 py-8 w-full'>
             <div className='lg:w-4/12 lg:h-4/12 lg:p-0 p-2'>
                 <Lottie
                     className="mx-3 mb-3"

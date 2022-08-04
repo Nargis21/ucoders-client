@@ -15,8 +15,8 @@ const UpdateHtml = () => {
         return <Loading></Loading>
     }
     return (
-        <div className='text-center'>
-            <h1 className='text-3xl text-slate-300 py-6'>Update or Remove HTML Lesson</h1>
+        <div className='text-center pb-10'>
+            <h1 className='text-3xl text-slate-300 py-10 font-bold'>Update or Remove HTML Lesson</h1>
             <div class="overflow-x-auto flex justify-center items-center px-2">
                 <table class="table w-full lg:w-3/5">
                     <thead>

@@ -48,25 +48,10 @@ const MyProfile = () => {
     }
 
     return (
-        <div>
-            <h1 className='text-3xl text-slate-200 font-bold text-center py-6'>My Profile</h1>
+        <div className='pb-10'>
+            <h1 className='text-3xl text-slate-200 font-bold text-center py-10'>Your Profile</h1>
             <div class="hero bg-base-600">
-                <div class="hero-content flex-col lg:flex-row-reverse ">
-                    <div className='flex justify-center '>
-                        <div class="card w-96 bg-slate-200 shadow-xl">
-                            <div class="card-body">
-                                <h1 className='text-3xl text-center py-3 font-bold text-slate-700'>Update Profile</h1>
-                                <form onSubmit={handleUpdateProfile} className='w-full text-center'>
-                                    <input name='education' required type="text" placeholder="Education" class="input input-bordered w-full mb-3" />
-                                    <input name='address' required type="text" placeholder="Address" class="input input-bordered w-full mb-3" />
-                                    <input name='photo' required type="text" placeholder="Photo URL" class="input input-bordered  w-full mb-3" />
-                                    <input name='phone' required type="text" placeholder="Phone" class="input input-bordered w-full mb-3" />
-                                    <input className='btn bg-green-600 border-0' type="submit" value="Update Profile" />
-                                </form>
-
-                            </div>
-                        </div>
-                    </div>
+                <div class="hero-content m-0 p-0 flex-col lg:flex-row">
                     <div>
                         <div className='flex justify-center'>
                             <div class="card w-96 bg-slate-200 shadow-xl">
@@ -93,6 +78,22 @@ const MyProfile = () => {
                             </div>
                         </div>
                     </div>
+                    <div className='flex justify-center '>
+                        <div class="card w-96 bg-slate-200 shadow-xl">
+                            <div class="card-body">
+                                <h1 className='text-3xl text-center py-3 font-bold text-slate-700'>Update Profile</h1>
+                                <form onSubmit={handleUpdateProfile} className='w-full text-center'>
+                                    <input name='education' required type="text" placeholder="Education" class="input input-bordered w-full mb-3" />
+                                    <input name='address' required type="text" placeholder="Address" class="input input-bordered w-full mb-3" />
+                                    <input name='photo' required type="text" placeholder="Photo URL" class="input input-bordered  w-full mb-3" />
+                                    <input name='phone' required type="text" placeholder="Phone" class="input input-bordered w-full mb-3" />
+                                    <input className='btn bg-green-600 border-0' type="submit" value="Update Profile" />
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

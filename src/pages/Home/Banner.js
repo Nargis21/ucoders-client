@@ -12,7 +12,7 @@ const Banner = () => {
         },
     };
     return (
-        <div className='flex lg:flex-row flex-col gap-6 justify-evenly py-10 items-center bg-slate-800'>
+        <div className='flex lg:flex-row flex-col gap-6 justify-evenly py-12 items-center bg-slate-800'>
             <div className='lg:text-6xl text-5xl font-bold text-slate-200 leading-normal text-center lg:text-left ml-4'>
                 <h1>Learn Code With</h1>
                 <h1><span className='text-green-600 font-bold lg:text-9xl text-7xl'>U</span>coders</h1>

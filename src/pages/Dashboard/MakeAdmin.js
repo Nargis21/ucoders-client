@@ -14,8 +14,8 @@ const MakeAdmin = () => {
         return <Loading></Loading>
     }
     return (
-        <div>
-            <h1 className='text-3xl text-slate-200 font-bold text-center p-4'>Make an Admin</h1>
+        <div className='pb-10'>
+            <h1 className='text-3xl text-slate-200 font-bold text-center p-10'>Make an Admin</h1>
             <div>
                 <div className="overflow-x-auto flex justify-center">
                     <table className="table w-6/12">
