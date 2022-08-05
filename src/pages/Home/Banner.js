@@ -1,6 +1,6 @@
 import React from 'react';
 import Lottie from "react-lottie";
-import banner from '../../assets/learn.json'
+import banner from '../../assets/banner.json'
 
 const Banner = () => {
     const defaultOptions = {

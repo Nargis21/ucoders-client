@@ -6,7 +6,7 @@ import Loading from '../Shared/Loading';
 
 const MyProfile = () => {
     const [user] = useAuthState(auth)
-    const { data, isLoading, refetch } = useQuery(['user'], () => fetch(`http://localhost:5000/user/${user.email}`, {
+    const { data, isLoading, refetch } = useQuery(['user'], () => fetch(`https://floating-peak-19260.herokuapp.com/user/${user.email}`, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -29,10 +29,11 @@ const MyProfile = () => {
         }
         console.log(updatedUser)
         if (email) {
-            fetch(`http://localhost:5000/user/update/${email}`, {
+            fetch(`https://floating-peak-19260.herokuapp.com/user/update/${email}`, {
                 method: 'PUT',
                 headers: {
-                    'content-type': 'application/json'
+                    'content-type': 'application/json',
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
                 },
                 body: JSON.stringify(updatedUser)
             })

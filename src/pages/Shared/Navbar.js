@@ -49,9 +49,27 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div class="navbar-end">
-                    <FaSearch className='text-2xl text-white mr-4 hidden lg:flex'></FaSearch>
+                    {user?.photoURL ? (
+                        <div className="h-12 w-12 sm:mb-2 lg:mb-0 mr-3 ml-4">
+                            <img
+                                src={user?.photoURL}
+                                class="rounded flex justify-center items-center"
+                                style={{ width: "50px", height: "45px" }}
+                                alt="Avatar"
+                            />
+                        </div>
+                    ) : (
+                        <div className="h-12 w-12 sm:mb-2 lg:mb-0 mr-3 ml-4">
+                            <img
+                                src="https://www.iconpacks.net/icons/2/free-user-icon-3297-thumb.png"
+                                class="rounded-circle d-flex justify-center align-items-center"
+                                alt="Avatar"
+                            />
+                        </div>
+                    )}
+                    {/* <FaSearch className='text-2xl text-white mr-4 hidden lg:flex'></FaSearch>
                     <FaLaptopCode className='text-2xl text-white mr-4 hidden lg:flex'></FaLaptopCode>
-                    <input type="checkbox" id='toggle' class="toggle mr-4 hidden lg:flex" />
+                    <input type="checkbox" id='toggle' class="toggle mr-4 hidden lg:flex" /> */}
                     {user ?
                         <button onClick={handleSignout} className="btn bg-green-600 border-0"><span className='mr-2'>Sign Out</span> <FaSignOutAlt></FaSignOutAlt></button>
                         :

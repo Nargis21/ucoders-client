@@ -5,15 +5,15 @@ import { Link, useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
 
-const HtmlContent = () => {
+const DomContent = () => {
 
     const [user] = useAuthState(auth)
     const { id } = useParams()
-    const [htmlLesson, setHtmlLesson] = useState({})
+    const [domLesson, setDomLesson] = useState({})
     useEffect(() => {
-        fetch(`https://floating-peak-19260.herokuapp.com/htmlLessons/${id}`)
+        fetch(`https://floating-peak-19260.herokuapp.com/domLessons/${id}`)
             .then(res => res.json())
-            .then(data => setHtmlLesson(data))
+            .then(data => setDomLesson(data))
     }, [id])
 
     const handleBookmark = () => {
@@ -22,8 +22,8 @@ const HtmlContent = () => {
         }
         const bookmarkContent = {
             email: user.email,
-            type: 'html',
-            lesson: htmlLesson.title
+            type: 'dom',
+            lesson: domLesson.title
         }
         fetch('https://floating-peak-19260.herokuapp.com/bookmark', {
             method: 'POST',
@@ -48,7 +48,7 @@ const HtmlContent = () => {
     return (
         <div className='lg:px-4 px-2 lg:pt-4 text-slate-200'>
             <div className='lg:text-4xl  text-3xl font-semibold flex lg:flex-row flex-col gap-2 justify-between'>
-                <h1># {htmlLesson.title}</h1>
+                <h1># {domLesson.title}</h1>
                 <div>
                     <button onClick={handleBookmark} className='btn bg-green-600 border-0'>
                         <span className='pr-2'> Add To Bookmark </span><FaBookmark></FaBookmark> </button>
@@ -58,24 +58,24 @@ const HtmlContent = () => {
                 <hr />
             </div>
             <div>
-                <h1 className='lg:text-3xl text-2xl font-semibold py-4'>{htmlLesson.subTitle}</h1>
+                <h1 className='lg:text-3xl text-2xl font-semibold py-4'>{domLesson.subTitle}</h1>
                 <div className=''>
-                    <h1 className='text-xl'>{htmlLesson.description}</h1>
+                    <h1 className='text-xl'>{domLesson.description}</h1>
                 </div>
             </div>
             <div className='lg:m-4 p-4 my-4 bg-slate-500 rounded'>
                 <h1 className='text-3xl font-semibold py-4'>Example:</h1>
-                <img src={htmlLesson.exampleImg} alt="" />
+                <img src={domLesson.exampleImg} alt="" />
                 <button className='btn border-0 bg-green-700 mt-4'>
                     <Link to='/login'>Try it Yourself</Link>
                     <FaAngleDoubleRight className='ml-2'></FaAngleDoubleRight>
                 </button>
             </div>
             <div className='bg-amber-100 m-6 p-6 text-black'>
-                <h1> <span className='font-bold'>Note:</span> {htmlLesson.note}</h1>
+                <h1> <span className='font-bold'>Note:</span> {domLesson.note}</h1>
             </div>
         </div>
     );
 };
 
-export default HtmlContent;
+export default DomContent;

@@ -1,8 +1,8 @@
 import React from 'react';
 import { toast } from 'react-toastify'
 
-const UpdateHtmlModal = ({ updateHtml, setUpdateHtml, refetch }) => {
-    const handleUpdateHtml = event => {
+const UpdateCssModal = ({ updateCss, setUpdateCss, refetch }) => {
+    const handleUpdateCss = event => {
         event.preventDefault()
         const lesson = {
             title: event.target.title.value,
@@ -12,7 +12,7 @@ const UpdateHtmlModal = ({ updateHtml, setUpdateHtml, refetch }) => {
             note: event.target.note.value
         }
 
-        fetch(`https://floating-peak-19260.herokuapp.com/htmlLessons/${updateHtml._id}`, {
+        fetch(`https://floating-peak-19260.herokuapp.com/cssLessons/${updateCss._id}`, {
             method: "PUT",
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`,
@@ -24,7 +24,7 @@ const UpdateHtmlModal = ({ updateHtml, setUpdateHtml, refetch }) => {
             .then(data => {
                 if (data.acknowledged) {
                     toast.success('Content Updated!')
-                    setUpdateHtml(null)
+                    setUpdateCss(null)
                     refetch()
                 }
             })
@@ -33,11 +33,11 @@ const UpdateHtmlModal = ({ updateHtml, setUpdateHtml, refetch }) => {
     }
     return (
         <div>
-            <input type="checkbox" id="update-html-modal" className="modal-toggle" />
+            <input type="checkbox" id="update-css-modal" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
                     <h3 className="font-bold text-slate-700 text-3xl text-center mb-2">Update Content</h3>
-                    <form onSubmit={handleUpdateHtml} className='w-full text-center'>
+                    <form onSubmit={handleUpdateCss} className='w-full text-center'>
                         <input type="text" placeholder="Add Your Content Title" class="input input-bordered input-lg w-full mb-4 " name='title' required />
                         <input type="text" placeholder="Add Your Content Sub Title" class="input input-bordered input-lg w-full mb-4" name='subTitle' required />
                         <textarea type="text" placeholder="Add Your Content Description" class="input input-bordered input-lg w-full h-36 mb-4" name='description' required />
@@ -47,7 +47,7 @@ const UpdateHtmlModal = ({ updateHtml, setUpdateHtml, refetch }) => {
                     </form>
 
                     <div className="modal-action">
-                        <label htmlFor="update-html-modal" className="btn btn-sm">Cancel</label>
+                        <label htmlFor="update-css-modal" className="btn btn-sm">Cancel</label>
                     </div>
                 </div>
             </div>
@@ -55,4 +55,4 @@ const UpdateHtmlModal = ({ updateHtml, setUpdateHtml, refetch }) => {
     );
 };
 
-export default UpdateHtmlModal;
+export default UpdateCssModal;

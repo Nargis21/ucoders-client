@@ -32,12 +32,33 @@ const Dashboard = () => {
                     >My Learning</Link></li>
                     {
                         admin && <>
+                            <li><Link to='/dashboard/makeAdmin' className='hover:bg-green-600 hover:text-white text-slate-200 bg-slate-600 font-bold mb-2 '
+                            >Make Admin</Link></li>
                             <li><Link to='/dashboard/addHtml' className='hover:bg-green-600 hover:text-white text-slate-200 bg-slate-600 font-bold mb-2'
                             >Add HTML Content</Link></li>
                             <li><Link to='/dashboard/updateHtml' className='hover:bg-green-600 hover:text-white text-slate-200 bg-slate-600 font-bold mb-2 '
                             >Update HTML Content</Link></li>
-                            <li><Link to='/dashboard/makeAdmin' className='hover:bg-green-600 hover:text-white text-slate-200 bg-slate-600 font-bold mb-2 '
-                            >Make Admin</Link></li>
+                            <li><Link to='/dashboard/addCss' className='hover:bg-green-600 hover:text-white text-slate-200 bg-slate-600 font-bold mb-2'
+                            >Add CSS Content</Link></li>
+                            <li><Link to='/dashboard/updateCss' className='hover:bg-green-600 hover:text-white text-slate-200 bg-slate-600 font-bold mb-2 '
+                            >Update CSS Content</Link></li>
+                            <li><Link to='/dashboard/addJavascript' className='hover:bg-green-600 hover:text-white text-slate-200 bg-slate-600 font-bold mb-2'
+                            >Add Javascript Content</Link></li>
+                            <li><Link to='/dashboard/updateJavascript' className='hover:bg-green-600 hover:text-white text-slate-200 bg-slate-600 font-bold mb-2 '
+                            >Update Javascript Content</Link></li>
+                            <li><Link to='/dashboard/addReact' className='hover:bg-green-600 hover:text-white text-slate-200 bg-slate-600 font-bold mb-2'
+                            >Add React Content</Link></li>
+                            <li><Link to='/dashboard/updateReact' className='hover:bg-green-600 hover:text-white text-slate-200 bg-slate-600 font-bold mb-2 '
+                            >Update React Content</Link></li>
+                            <li><Link to='/dashboard/addNode' className='hover:bg-green-600 hover:text-white text-slate-200 bg-slate-600 font-bold mb-2'
+                            >Add Node.Js Content</Link></li>
+                            <li><Link to='/dashboard/updateNode' className='hover:bg-green-600 hover:text-white text-slate-200 bg-slate-600 font-bold mb-2 '
+                            >Update Node.Js Content</Link></li>
+                            <li><Link to='/dashboard/addDom' className='hover:bg-green-600 hover:text-white text-slate-200 bg-slate-600 font-bold mb-2'
+                            >Add Dom Content</Link></li>
+                            <li><Link to='/dashboard/updateDom' className='hover:bg-green-600 hover:text-white text-slate-200 bg-slate-600 font-bold mb-2 '
+                            >Update Dom Content</Link></li>
+
                         </>
                     }
 

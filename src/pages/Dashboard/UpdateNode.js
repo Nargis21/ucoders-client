@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
-import DeleteHtmlModal from './DeleteHtmlModal';
-import HtmlRow from './HtmlRow';
-import UpdateHtmlModal from './UpdateHtmlModal';
+import DeleteNodeModal from './DeleteNodeModal';
+import NodeRow from './NodeRow';
+import UpdateNodeModal from './UpdateNodeModal';
 
-const UpdateHtml = () => {
+const UpdateNode = () => {
     const [deleteConfirm, setDeleteConfirm] = useState(null)
-    const [updateHtml, setUpdateHtml] = useState(null)
+    const [updateNode, setUpdateNode] = useState(null)
 
-    const { data: lessons, isLoading, refetch } = useQuery(['lessons'], () => fetch('https://floating-peak-19260.herokuapp.com/htmlLessons').then(res => res.json()))
+    const { data: lessons, isLoading, refetch } = useQuery(['lessons'], () => fetch('https://floating-peak-19260.herokuapp.com/nodeLessons').then(res => res.json()))
 
     if (isLoading) {
         return <Loading></Loading>
     }
     return (
         <div className='text-center pb-10'>
-            <h1 className='text-3xl text-slate-300 py-10 font-bold'>Update or Remove HTML Lesson</h1>
+            <h1 className='text-3xl text-slate-300 py-10 font-bold'>Update or Remove Node Lesson</h1>
             <div class="overflow-x-auto flex justify-center items-center px-2">
                 <table class="table w-full lg:w-3/5">
                     <thead>
@@ -29,35 +29,35 @@ const UpdateHtml = () => {
                     </thead>
                     <tbody>
                         {
-                            lessons.map((lesson, index) => <HtmlRow
+                            lessons.map((lesson, index) => <NodeRow
                                 key={lesson._id}
                                 lesson={lesson}
                                 index={index}
                                 setDeleteConfirm={setDeleteConfirm}
-                                setUpdateHtml={setUpdateHtml}
+                                setUpdateNode={setUpdateNode}
                                 refetch={refetch}
-                            ></HtmlRow>)
+                            ></NodeRow>)
                         }
 
                     </tbody>
                 </table>
             </div>
             {
-                deleteConfirm && <DeleteHtmlModal
+                deleteConfirm && <DeleteNodeModal
                     deleteConfirm={deleteConfirm}
                     setDeleteConfirm={setDeleteConfirm}
                     refetch={refetch}
-                ></DeleteHtmlModal>
+                ></DeleteNodeModal>
             }
             {
-                updateHtml && <UpdateHtmlModal
-                    updateHtml={updateHtml}
-                    setUpdateHtml={setUpdateHtml}
+                updateNode && <UpdateNodeModal
+                    updateNode={updateNode}
+                    setUpdateNode={setUpdateNode}
                     refetch={refetch}
-                ></UpdateHtmlModal>
+                ></UpdateNodeModal>
             }
         </div>
     );
 };
 
-export default UpdateHtml;
+export default UpdateNode;

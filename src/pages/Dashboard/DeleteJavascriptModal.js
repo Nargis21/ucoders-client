@@ -1,10 +1,10 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const DeleteHtmlModal = ({ deleteConfirm, setDeleteConfirm, refetch }) => {
+const DeleteJavascriptModal = ({ deleteConfirm, setDeleteConfirm, refetch }) => {
     const { _id } = deleteConfirm
-    const handleHtmlDelete = () => {
-        fetch(`https://floating-peak-19260.herokuapp.com/htmlLessons/${_id}`, {
+    const handleJavascriptDelete = () => {
+        fetch(`https://floating-peak-19260.herokuapp.com/javascriptLessons/${_id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -25,13 +25,13 @@ const DeleteHtmlModal = ({ deleteConfirm, setDeleteConfirm, refetch }) => {
     }
     return (
         <div>
-            <input type="checkbox" id="delete-html-modal" class="modal-toggle" />
+            <input type="checkbox" id="delete-javascript-modal" class="modal-toggle" />
             <div class="modal modal-bottom sm:modal-middle">
                 <div class="modal-box">
                     <h3 class="font-bold text-lg">Are you sure want to delete this Content?</h3>
                     <div class="modal-action">
-                        <button className='btn btn-error  px-6 btn-sm' onClick={handleHtmlDelete}>Delete</button>
-                        <label for="delete-html-modal" class="btn px-6 btn-sm">Cancel</label>
+                        <button className='btn btn-error  px-6 btn-sm' onClick={handleJavascriptDelete}>Delete</button>
+                        <label for="delete-javascript-modal" class="btn px-6 btn-sm">Cancel</label>
                     </div>
                 </div>
             </div>
@@ -39,4 +39,4 @@ const DeleteHtmlModal = ({ deleteConfirm, setDeleteConfirm, refetch }) => {
     );
 };
 
-export default DeleteHtmlModal;
+export default DeleteJavascriptModal;

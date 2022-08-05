@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
-import DeleteHtmlModal from './DeleteHtmlModal';
-import HtmlRow from './HtmlRow';
-import UpdateHtmlModal from './UpdateHtmlModal';
+import DeleteCssModal from './DeleteCssModal';
+import CssRow from './CssRow';
+import UpdateCssModal from './UpdateCssModal';
 
 const UpdateHtml = () => {
     const [deleteConfirm, setDeleteConfirm] = useState(null)
-    const [updateHtml, setUpdateHtml] = useState(null)
+    const [updateCss, setUpdateCss] = useState(null)
 
-    const { data: lessons, isLoading, refetch } = useQuery(['lessons'], () => fetch('https://floating-peak-19260.herokuapp.com/htmlLessons').then(res => res.json()))
+    const { data: lessons, isLoading, refetch } = useQuery(['lessons'], () => fetch('https://floating-peak-19260.herokuapp.com/cssLessons').then(res => res.json()))
 
     if (isLoading) {
         return <Loading></Loading>
     }
     return (
         <div className='text-center pb-10'>
-            <h1 className='text-3xl text-slate-300 py-10 font-bold'>Update or Remove HTML Lesson</h1>
+            <h1 className='text-3xl text-slate-300 py-10 font-bold'>Update or Remove CSS Lesson</h1>
             <div class="overflow-x-auto flex justify-center items-center px-2">
                 <table class="table w-full lg:w-3/5">
                     <thead>
@@ -29,32 +29,32 @@ const UpdateHtml = () => {
                     </thead>
                     <tbody>
                         {
-                            lessons.map((lesson, index) => <HtmlRow
+                            lessons.map((lesson, index) => <CssRow
                                 key={lesson._id}
                                 lesson={lesson}
                                 index={index}
                                 setDeleteConfirm={setDeleteConfirm}
-                                setUpdateHtml={setUpdateHtml}
+                                setUpdateCss={setUpdateCss}
                                 refetch={refetch}
-                            ></HtmlRow>)
+                            ></CssRow>)
                         }
 
                     </tbody>
                 </table>
             </div>
             {
-                deleteConfirm && <DeleteHtmlModal
+                deleteConfirm && <DeleteCssModal
                     deleteConfirm={deleteConfirm}
                     setDeleteConfirm={setDeleteConfirm}
                     refetch={refetch}
-                ></DeleteHtmlModal>
+                ></DeleteCssModal>
             }
             {
-                updateHtml && <UpdateHtmlModal
-                    updateHtml={updateHtml}
-                    setUpdateHtml={setUpdateHtml}
+                updateCss && <UpdateCssModal
+                    updateCss={updateCss}
+                    setUpdateCss={setUpdateCss}
                     refetch={refetch}
-                ></UpdateHtmlModal>
+                ></UpdateCssModal>
             }
         </div>
     );

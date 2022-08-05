@@ -45,7 +45,7 @@ const SignUp = () => {
         return <Loading></Loading>
     }
     return (
-        <div className='flex lg:h-screen justify-center items-center'>
+        <div className='flex lg:h-screen justify-center items-center lg:m-0 m-4 bg-slate-300'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body items-center ">
                     <h2 className="card-title text-2xl">Sign Up</h2>
@@ -130,7 +130,14 @@ const SignUp = () => {
                     <div className="divider">OR</div>
                     <button className="btn btn-outline w-full"
                         onClick={() => signInWithGoogle()}
-                    >Continue With Google</button>
+                    ><span> Continue With Google</span>
+                        <div className="h-8 w-8 sm:mb-2 lg:mb-0 mr-3 ml-4">
+                            <img
+                                src="https://www.raqnbeauty.com/wp-content/uploads/2020/06/google-logo-png-google-icon-logo-png-transparent-svg-vector-bie-supply-14.png"
+                                class="rounded-circle d-flex justify-center align-items-center"
+                                alt="Avatar"
+                            />
+                        </div></button>
 
                 </div>
             </div>

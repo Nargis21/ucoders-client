@@ -1,23 +1,23 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const AddHtml = () => {
-    const handleAddHtmlContent = event => {
+const AddDom = () => {
+    const handleAddDomContent = event => {
         event.preventDefault()
-        const htmlContent = {
+        const domContent = {
             title: event.target.title.value,
             subTitle: event.target.subTitle.value,
             description: event.target.description.value,
             exampleImg: event.target.exampleImg.value,
             note: event.target.note.value
         }
-        fetch('https://floating-peak-19260.herokuapp.com/htmlLessons', {
+        fetch('https://floating-peak-19260.herokuapp.com/domLessons', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
             },
-            body: JSON.stringify(htmlContent)
+            body: JSON.stringify(domContent)
         })
             .then(res => res.json())
             .then(data => {
@@ -34,8 +34,8 @@ const AddHtml = () => {
     return (
         <div className='flex justify-center items-center my-6 lg:mx-0 mx-4'>
             <div class="card pr-8 lg:w-3/5 shadow-xl text-center bg-slate-300">
-                <h1 className='text-3xl text-slate-700 my-4 font-bold'>Add a New HTML Lesson</h1>
-                <form onSubmit={handleAddHtmlContent} className='text-center'>
+                <h1 className='text-3xl text-slate-700 my-4 font-bold'>Add a New Dom Lesson</h1>
+                <form onSubmit={handleAddDomContent} className='text-center'>
                     <input type="text" placeholder="Add Your Content Title" class="input input-bordered input-lg w-full mb-4 mx-4" name='title' required />
                     <input type="text" placeholder="Add Your Content Sub Title" class="input input-bordered input-lg w-full mb-4 mx-4" name='subTitle' required />
                     <textarea type="text" placeholder="Add Your Content Description" class="input input-bordered input-lg w-full h-36 mb-4 mx-4" name='description' required />
@@ -48,4 +48,4 @@ const AddHtml = () => {
     );
 };
 
-export default AddHtml;
+export default AddDom;

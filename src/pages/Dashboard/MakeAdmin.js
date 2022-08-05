@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
+import DeleteUserModal from './DeleteUserModal';
+import MakeAdminModal from './MakeAdminModal';
+import RemoveAdminModal from './RemoveAdminModal';
 import UsersRow from './UsersRow';
 
 const MakeAdmin = () => {
-    const { isLoading, data: users, refetch } = useQuery(['users'], () => fetch('http://localhost:5000/user', {
+    const [deleteConfirm, setDeleteConfirm] = useState(null)
+    const [makeAdmin, setMakeAdmin] = useState(null)
+    const [removeAdmin, setRemoveAdmin] = useState(null)
+
+    const { isLoading, data: users, refetch } = useQuery(['users'], () => fetch('https://floating-peak-19260.herokuapp.com/user', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -17,13 +24,14 @@ const MakeAdmin = () => {
         <div className='pb-10'>
             <h1 className='text-3xl text-slate-200 font-bold text-center p-10'>Make an Admin</h1>
             <div>
-                <div className="overflow-x-auto flex justify-center">
+                <div className="overflow-x-auto flex items-center m-2 justify-center">
                     <table className="table w-6/12">
                         <thead>
                             <tr>
                                 <th></th>
                                 <th>Email</th>
-                                <th>Action</th>
+                                <th>Make Admin</th>
+                                <th>Remove User/Admin</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -32,6 +40,9 @@ const MakeAdmin = () => {
                                     key={user._id}
                                     user={user}
                                     index={index}
+                                    setDeleteConfirm={setDeleteConfirm}
+                                    setMakeAdmin={setMakeAdmin}
+                                    setRemoveAdmin={setRemoveAdmin}
                                     refetch={refetch}
                                 ></UsersRow>)
                             }
@@ -39,6 +50,27 @@ const MakeAdmin = () => {
                     </table>
                 </div>
             </div>
+            {
+                deleteConfirm && <DeleteUserModal
+                    deleteConfirm={deleteConfirm}
+                    setDeleteConfirm={setDeleteConfirm}
+                    refetch={refetch}
+                ></DeleteUserModal>
+            }
+            {
+                makeAdmin && <MakeAdminModal
+                    makeAdmin={makeAdmin}
+                    setMakeAdmin={setMakeAdmin}
+                    refetch={refetch}
+                ></MakeAdminModal>
+            }
+            {
+                removeAdmin && <RemoveAdminModal
+                    removeAdmin={removeAdmin}
+                    setRemoveAdmin={setRemoveAdmin}
+                    refetch={refetch}
+                ></RemoveAdminModal>
+            }
         </div>
     );
 };
