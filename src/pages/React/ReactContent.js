@@ -11,7 +11,7 @@ const ReactContent = () => {
     const { id } = useParams()
     const [reactLesson, setReactLesson] = useState({})
     useEffect(() => {
-        fetch(`https://floating-peak-19260.herokuapp.com/reactLessons/${id}`)
+        fetch(`https://ucoders.up.railway.app/reactLessons/${id}`)
             .then(res => res.json())
             .then(data => setReactLesson(data))
     }, [id])
@@ -25,7 +25,7 @@ const ReactContent = () => {
             type: 'react',
             lesson: reactLesson.title
         }
-        fetch('https://floating-peak-19260.herokuapp.com/bookmark', {
+        fetch('https://ucoders.up.railway.app/bookmark', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

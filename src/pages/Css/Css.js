@@ -5,7 +5,7 @@ import Footer from '../Shared/Footer';
 const Css = () => {
     const [cssLessons, setCssLessons] = useState([])
     useEffect(() => {
-        fetch('https://floating-peak-19260.herokuapp.com/cssLessons')
+        fetch('https://ucoders.up.railway.app/cssLessons')
             .then(res => res.json())
             .then(data => setCssLessons(data))
     }, [])

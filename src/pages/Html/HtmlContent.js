@@ -11,7 +11,7 @@ const HtmlContent = () => {
     const { id } = useParams()
     const [htmlLesson, setHtmlLesson] = useState({})
     useEffect(() => {
-        fetch(`https://floating-peak-19260.herokuapp.com/htmlLessons/${id}`)
+        fetch(`https://ucoders.up.railway.app/htmlLessons/${id}`)
             .then(res => res.json())
             .then(data => setHtmlLesson(data))
     }, [id])
@@ -25,7 +25,7 @@ const HtmlContent = () => {
             type: 'html',
             lesson: htmlLesson.title
         }
-        fetch('https://floating-peak-19260.herokuapp.com/bookmark', {
+        fetch('https://ucoders.up.railway.app/bookmark', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

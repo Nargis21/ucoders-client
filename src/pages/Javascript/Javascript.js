@@ -5,7 +5,7 @@ import Footer from '../Shared/Footer';
 const Javascript = () => {
     const [javascriptLessons, setjavascriptLessons] = useState([])
     useEffect(() => {
-        fetch('https://floating-peak-19260.herokuapp.com/javascriptLessons')
+        fetch('https://ucoders.up.railway.app/javascriptLessons')
             .then(res => res.json())
             .then(data => setjavascriptLessons(data))
     }, [])

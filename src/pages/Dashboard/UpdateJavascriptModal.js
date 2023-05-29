@@ -12,7 +12,7 @@ const UpdateJavascriptModal = ({ updateJavascript, setUpdateJavascript, refetch 
             note: event.target.note.value
         }
 
-        fetch(`https://floating-peak-19260.herokuapp.com/javascriptLessons/${updateJavascript._id}`, {
+        fetch(`https://ucoders.up.railway.app/javascriptLessons/${updateJavascript._id}`, {
             method: "PUT",
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`,

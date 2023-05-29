@@ -11,7 +11,7 @@ const AddDom = () => {
             exampleImg: event.target.exampleImg.value,
             note: event.target.note.value
         }
-        fetch('https://floating-peak-19260.herokuapp.com/domLessons', {
+        fetch('https://ucoders.up.railway.app/domLessons', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

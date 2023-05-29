@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const DeleteReactModal = ({ deleteConfirm, setDeleteConfirm, refetch }) => {
     const { _id } = deleteConfirm
     const handleReactDelete = () => {
-        fetch(`https://floating-peak-19260.herokuapp.com/reactLessons/${_id}`, {
+        fetch(`https://ucoders.up.railway.app/reactLessons/${_id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

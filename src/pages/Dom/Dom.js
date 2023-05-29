@@ -5,7 +5,7 @@ import Footer from '../Shared/Footer';
 const Dom = () => {
     const [domLessons, setDomLessons] = useState([])
     useEffect(() => {
-        fetch('https://floating-peak-19260.herokuapp.com/domLessons')
+        fetch('https://ucoders.up.railway.app/domLessons')
             .then(res => res.json())
             .then(data => setDomLessons(data))
     }, [])

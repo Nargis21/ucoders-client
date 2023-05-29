@@ -11,7 +11,7 @@ const AddNode = () => {
             exampleImg: event.target.exampleImg.value,
             note: event.target.note.value
         }
-        fetch('https://floating-peak-19260.herokuapp.com/nodeLessons', {
+        fetch('https://ucoders.up.railway.app/nodeLessons', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

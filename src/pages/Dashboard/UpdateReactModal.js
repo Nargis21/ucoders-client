@@ -12,7 +12,7 @@ const UpdateReactModal = ({ updateReact, setUpdateReact, refetch }) => {
             note: event.target.note.value
         }
 
-        fetch(`https://floating-peak-19260.herokuapp.com/reactLessons/${updateReact._id}`, {
+        fetch(`https://ucoders.up.railway.app/reactLessons/${updateReact._id}`, {
             method: "PUT",
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`,

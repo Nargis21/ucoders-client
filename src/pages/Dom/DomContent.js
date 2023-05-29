@@ -11,7 +11,7 @@ const DomContent = () => {
     const { id } = useParams()
     const [domLesson, setDomLesson] = useState({})
     useEffect(() => {
-        fetch(`https://floating-peak-19260.herokuapp.com/domLessons/${id}`)
+        fetch(`https://ucoders.up.railway.app/domLessons/${id}`)
             .then(res => res.json())
             .then(data => setDomLesson(data))
     }, [id])
@@ -25,7 +25,7 @@ const DomContent = () => {
             type: 'dom',
             lesson: domLesson.title
         }
-        fetch('https://floating-peak-19260.herokuapp.com/bookmark', {
+        fetch('https://ucoders.up.railway.app/bookmark', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

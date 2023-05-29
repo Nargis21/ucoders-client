@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const RemoveAdminModal = ({ removeAdmin, setRemoveAdmin, refetch }) => {
     const { email } = removeAdmin
     const handleRemoveAdmin = () => {
-        fetch(`https://floating-peak-19260.herokuapp.com/user/admins/${email}`, {
+        fetch(`https://ucoders.up.railway.app/user/admins/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

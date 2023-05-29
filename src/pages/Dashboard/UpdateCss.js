@@ -9,7 +9,7 @@ const UpdateHtml = () => {
     const [deleteConfirm, setDeleteConfirm] = useState(null)
     const [updateCss, setUpdateCss] = useState(null)
 
-    const { data: lessons, isLoading, refetch } = useQuery(['lessons'], () => fetch('https://floating-peak-19260.herokuapp.com/cssLessons').then(res => res.json()))
+    const { data: lessons, isLoading, refetch } = useQuery(['lessons'], () => fetch('https://ucoders.up.railway.app/cssLessons').then(res => res.json()))
 
     if (isLoading) {
         return <Loading></Loading>

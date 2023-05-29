@@ -11,7 +11,7 @@ const AddJavascript = () => {
             exampleImg: event.target.exampleImg.value,
             note: event.target.note.value
         }
-        fetch('https://floating-peak-19260.herokuapp.com/javascriptLessons', {
+        fetch('https://ucoders.up.railway.app/javascriptLessons', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
