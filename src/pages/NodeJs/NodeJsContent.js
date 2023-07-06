@@ -11,7 +11,7 @@ const NodeContent = () => {
     const { id } = useParams()
     const [nodeLesson, setNodeLesson] = useState({})
     useEffect(() => {
-        fetch(`https://ucoders.up.railway.app/nodeLessons/${id}`)
+        fetch(`https://ucoders-server.vercel.app/nodeLessons/${id}`)
             .then(res => res.json())
             .then(data => setNodeLesson(data))
     }, [id])
@@ -25,7 +25,7 @@ const NodeContent = () => {
             type: 'node',
             lesson: nodeLesson.title
         }
-        fetch('https://ucoders.up.railway.app/bookmark', {
+        fetch('https://ucoders-server.vercel.app/bookmark', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

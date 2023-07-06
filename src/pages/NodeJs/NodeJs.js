@@ -5,7 +5,7 @@ import Footer from '../Shared/Footer';
 const NodeJs = () => {
     const [nodeLessons, setNodeLessons] = useState([])
     useEffect(() => {
-        fetch('https://ucoders.up.railway.app/nodeLessons')
+        fetch('https://ucoders-server.vercel.app/nodeLessons')
             .then(res => res.json())
             .then(data => setNodeLessons(data))
     }, [])

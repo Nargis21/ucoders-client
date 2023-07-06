@@ -11,7 +11,7 @@ const AddJavascript = () => {
             exampleImg: event.target.exampleImg.value,
             note: event.target.note.value
         }
-        fetch('https://ucoders.up.railway.app/javascriptLessons', {
+        fetch('https://ucoders-server.vercel.app/javascriptLessons', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

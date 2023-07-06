@@ -9,7 +9,7 @@ const UpdateJavascript = () => {
     const [deleteConfirm, setDeleteConfirm] = useState(null)
     const [updateJavascript, setUpdateJavascript] = useState(null)
 
-    const { data: lessons, isLoading, refetch } = useQuery(['lessons'], () => fetch('https://ucoders.up.railway.app/javascriptLessons').then(res => res.json()))
+    const { data: lessons, isLoading, refetch } = useQuery(['lessons'], () => fetch('https://ucoders-server.vercel.app/javascriptLessons').then(res => res.json()))
 
     if (isLoading) {
         return <Loading></Loading>

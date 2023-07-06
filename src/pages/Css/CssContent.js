@@ -11,7 +11,7 @@ const CssContent = () => {
     const { id } = useParams()
     const [cssLesson, setCssLesson] = useState({})
     useEffect(() => {
-        fetch(`https://ucoders.up.railway.app/cssLessons/${id}`)
+        fetch(`https://ucoders-server.vercel.app/cssLessons/${id}`)
             .then(res => res.json())
             .then(data => setCssLesson(data))
     }, [id])
@@ -25,7 +25,7 @@ const CssContent = () => {
             type: 'css',
             lesson: cssLesson.title
         }
-        fetch('https://ucoders.up.railway.app/bookmark', {
+        fetch('https://ucoders-server.vercel.app/bookmark', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

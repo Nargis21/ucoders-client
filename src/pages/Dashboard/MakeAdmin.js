@@ -11,7 +11,7 @@ const MakeAdmin = () => {
     const [makeAdmin, setMakeAdmin] = useState(null)
     const [removeAdmin, setRemoveAdmin] = useState(null)
 
-    const { isLoading, data: users, refetch } = useQuery(['users'], () => fetch('https://ucoders.up.railway.app/user', {
+    const { isLoading, data: users, refetch } = useQuery(['users'], () => fetch('https://ucoders-server.vercel.app/user', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const DeleteNodeModal = ({ deleteConfirm, setDeleteConfirm, refetch }) => {
     const { _id } = deleteConfirm
     const handleNodeDelete = () => {
-        fetch(`https://ucoders.up.railway.app/nodeLessons/${_id}`, {
+        fetch(`https://ucoders-server.vercel.app/nodeLessons/${_id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

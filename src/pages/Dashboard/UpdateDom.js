@@ -9,7 +9,7 @@ const UpdateDom = () => {
     const [deleteConfirm, setDeleteConfirm] = useState(null)
     const [updateDom, setUpdateDom] = useState(null)
 
-    const { data: lessons, isLoading, refetch } = useQuery(['lessons'], () => fetch('https://ucoders.up.railway.app/domLessons').then(res => res.json()))
+    const { data: lessons, isLoading, refetch } = useQuery(['lessons'], () => fetch('https://ucoders-server.vercel.app/domLessons').then(res => res.json()))
 
     if (isLoading) {
         return <Loading></Loading>

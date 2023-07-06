@@ -11,7 +11,7 @@ const AddDom = () => {
             exampleImg: event.target.exampleImg.value,
             note: event.target.note.value
         }
-        fetch('https://ucoders.up.railway.app/domLessons', {
+        fetch('https://ucoders-server.vercel.app/domLessons', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

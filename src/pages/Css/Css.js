@@ -5,7 +5,7 @@ import Footer from '../Shared/Footer';
 const Css = () => {
     const [cssLessons, setCssLessons] = useState([])
     useEffect(() => {
-        fetch('https://ucoders.up.railway.app/cssLessons')
+        fetch('https://ucoders-server.vercel.app/cssLessons')
             .then(res => res.json())
             .then(data => setCssLessons(data))
     }, [])

@@ -5,7 +5,7 @@ import Footer from '../Shared/Footer';
 const Javascript = () => {
     const [javascriptLessons, setjavascriptLessons] = useState([])
     useEffect(() => {
-        fetch('https://ucoders.up.railway.app/javascriptLessons')
+        fetch('https://ucoders-server.vercel.app/javascriptLessons')
             .then(res => res.json())
             .then(data => setjavascriptLessons(data))
     }, [])

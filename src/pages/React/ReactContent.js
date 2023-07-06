@@ -11,7 +11,7 @@ const ReactContent = () => {
     const { id } = useParams()
     const [reactLesson, setReactLesson] = useState({})
     useEffect(() => {
-        fetch(`https://ucoders.up.railway.app/reactLessons/${id}`)
+        fetch(`https://ucoders-server.vercel.app/reactLessons/${id}`)
             .then(res => res.json())
             .then(data => setReactLesson(data))
     }, [id])
@@ -25,7 +25,7 @@ const ReactContent = () => {
             type: 'react',
             lesson: reactLesson.title
         }
-        fetch('https://ucoders.up.railway.app/bookmark', {
+        fetch('https://ucoders-server.vercel.app/bookmark', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

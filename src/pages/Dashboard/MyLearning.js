@@ -9,7 +9,7 @@ import LessonRow from './LessonRow';
 const MyLearning = () => {
     const [user] = useAuthState(auth)
     const [deleteConfirm, setDeleteConfirm] = useState(null)
-    const { isLoading, data: lessons, refetch } = useQuery(['lessons'], () => fetch(`https://ucoders.up.railway.app/bookmark/${user.email}`, {
+    const { isLoading, data: lessons, refetch } = useQuery(['lessons'], () => fetch(`https://ucoders-server.vercel.app/bookmark/${user.email}`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

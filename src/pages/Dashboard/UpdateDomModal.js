@@ -12,7 +12,7 @@ const UpdateDomModal = ({ updateDom, setUpdateDom, refetch }) => {
             note: event.target.note.value
         }
 
-        fetch(`https://ucoders.up.railway.app/domLessons/${updateDom._id}`, {
+        fetch(`https://ucoders-server.vercel.app/domLessons/${updateDom._id}`, {
             method: "PUT",
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`,

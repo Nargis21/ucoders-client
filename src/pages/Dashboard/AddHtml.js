@@ -11,7 +11,7 @@ const AddHtml = () => {
             exampleImg: event.target.exampleImg.value,
             note: event.target.note.value
         }
-        fetch('https://ucoders.up.railway.app/htmlLessons', {
+        fetch('https://ucoders-server.vercel.app/htmlLessons', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

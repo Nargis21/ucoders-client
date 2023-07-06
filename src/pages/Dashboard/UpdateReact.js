@@ -9,7 +9,7 @@ const UpdateReact = () => {
     const [deleteConfirm, setDeleteConfirm] = useState(null)
     const [updateReact, setUpdateReact] = useState(null)
 
-    const { data: lessons, isLoading, refetch } = useQuery(['lessons'], () => fetch('https://ucoders.up.railway.app/reactLessons').then(res => res.json()))
+    const { data: lessons, isLoading, refetch } = useQuery(['lessons'], () => fetch('https://ucoders-server.vercel.app/reactLessons').then(res => res.json()))
 
     if (isLoading) {
         return <Loading></Loading>

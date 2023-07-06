@@ -11,7 +11,7 @@ const JavascriptContent = () => {
     const { id } = useParams()
     const [javascriptLesson, setjavascriptLesson] = useState({})
     useEffect(() => {
-        fetch(`https://ucoders.up.railway.app/javascriptLessons/${id}`)
+        fetch(`https://ucoders-server.vercel.app/javascriptLessons/${id}`)
             .then(res => res.json())
             .then(data => setjavascriptLesson(data))
     }, [id])
@@ -25,7 +25,7 @@ const JavascriptContent = () => {
             type: 'javascript',
             lesson: javascriptLesson.title
         }
-        fetch('https://ucoders.up.railway.app/bookmark', {
+        fetch('https://ucoders-server.vercel.app/bookmark', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

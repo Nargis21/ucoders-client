@@ -11,7 +11,7 @@ const AddNode = () => {
             exampleImg: event.target.exampleImg.value,
             note: event.target.note.value
         }
-        fetch('https://ucoders.up.railway.app/nodeLessons', {
+        fetch('https://ucoders-server.vercel.app/nodeLessons', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

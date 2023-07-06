@@ -12,7 +12,7 @@ const UpdateCssModal = ({ updateCss, setUpdateCss, refetch }) => {
             note: event.target.note.value
         }
 
-        fetch(`https://ucoders.up.railway.app/cssLessons/${updateCss._id}`, {
+        fetch(`https://ucoders-server.vercel.app/cssLessons/${updateCss._id}`, {
             method: "PUT",
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`,

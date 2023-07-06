@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const MakeAdminModal = ({ makeAdmin, setMakeAdmin, refetch }) => {
     const { email } = makeAdmin
     const handleMakeAdmin = () => {
-        fetch(`https://ucoders.up.railway.app/user/admin/${email}`, {
+        fetch(`https://ucoders-server.vercel.app/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

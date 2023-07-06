@@ -5,7 +5,7 @@ import Footer from '../Shared/Footer';
 const Dom = () => {
     const [domLessons, setDomLessons] = useState([])
     useEffect(() => {
-        fetch('https://ucoders.up.railway.app/domLessons')
+        fetch('https://ucoders-server.vercel.app/domLessons')
             .then(res => res.json())
             .then(data => setDomLessons(data))
     }, [])
